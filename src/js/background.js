@@ -7,6 +7,8 @@ $(function() {
       findUserName(tab);
     } else if (m = tab.url.match(/^http(?:s)?:\/\/(?:www\.)?pplog\.net\/u\/(\w+)/)) {
       redirectToTwitter(tab, m[1]);
+    } else {
+      openPoemZapping();
     }
   }
 
@@ -20,6 +22,10 @@ $(function() {
     if (userName) {
       chrome.tabs.update(tab.id, {url: "https://pplog.net/u/" + userName});
     }
+  }
+
+  function openPoemZapping() {
+    chrome.tabs.create({url: "https://pplog.net/zapping"});
   }
 
   function redirectToTwitter(tab, userName) {
