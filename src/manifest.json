@@ -1,0 +1,20 @@
+{
+  "name": "pplog ( ˘ω˘)ﾉ\"Y☆Yヾ(˘ω˘ ) twitter",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "You can easily get one's poem.",
+  "icons": {
+    "16": "icons/icon16x16.png",
+    "48": "icons/icon48x48.png",
+    "128": "icons/icon128x128.png"
+  },
+  "browser_action": {
+    "default_icon": "/icons/icon48x48.png"
+  },
+  "background": {
+    "scripts": ["js/jquery-2.1.1.min.js", "js/twitter.js"]
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
