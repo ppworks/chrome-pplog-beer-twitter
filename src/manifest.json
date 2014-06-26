@@ -14,6 +14,10 @@
   "background": {
     "scripts": ["js/jquery-2.1.1.min.js", "js/twitter.js"]
   },
+  "content_scripts": [{
+    "matches": ["https://twitter.com/*"],
+    "js": ["js/jquery-2.1.1.min.js", "js/contentscript.js"]
+  }],
   "permissions": [
     "tabs"
   ]
