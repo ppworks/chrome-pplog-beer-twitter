@@ -12,7 +12,7 @@
     "default_icon": "/icons/icon48x48.png"
   },
   "background": {
-    "scripts": ["js/jquery-2.1.1.min.js", "js/twitter.js"]
+    "scripts": ["js/jquery-2.1.1.min.js", "js/background.js"]
   },
   "content_scripts": [{
     "matches": ["https://twitter.com/*"],
