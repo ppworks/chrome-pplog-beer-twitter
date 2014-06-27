@@ -1,7 +1,8 @@
 $(function() {
+  var invalidTwitterIds = ['i', 'settings', 'about', 'jobs', 'privacy', 'tos'];
   function clicked(tab) {
 
-    if (m = tab.url.match(/^http(?:s)?:\/\/twitter\.com\/(\w+)$/)) {
+    if (m = tab.url.match(/^http(?:s)?:\/\/twitter\.com\/(\w+)/)) {
       redirectToPoem(tab, m[1]);
     } else if (m = tab.url.match(/^http(?:s)?:\/\/twitter\.com/)) {
       findUserName(tab);
@@ -19,7 +20,7 @@ $(function() {
   }
 
   function redirectToPoem(tab, userName) {
-    if (userName) {
+    if (userName && invalidTwitterIds.indexOf(userName) == -1) {
       chrome.tabs.update(tab.id, {url: "https://pplog.net/u/" + userName});
     } else {
       openPoemZapping();
